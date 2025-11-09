@@ -5,6 +5,7 @@ import requests
 import threading
 import time
 from datetime import date
+import winshell
 from pathlib import Path
 from PIL import Image, ImageDraw
 from pystray import Icon as icon, Menu as menu, MenuItem as item
@@ -44,6 +45,11 @@ class WallpaperApp:
                 'Automatisch alle 24h',
                 self.toggle_auto_update,
                 checked=lambda item: self.auto_update_enabled
+            ),
+            item(
+                'Beim Systemstart ausführen',
+                self.toggle_autostart,
+                checked=lambda item: os.path.exists(self._get_autostart_shortcut_path())
             ),
             menu.SEPARATOR,
             item('Beenden', self.exit_app)
@@ -103,6 +109,26 @@ class WallpaperApp:
         else:
             self.stop_auto_update_thread()
             print("Automatisches Update deaktiviert.")
+
+    def _get_autostart_shortcut_path(self):
+        """Gibt den vollständigen Pfad zur Verknüpfungsdatei im Autostart-Ordner zurück."""
+        startup_folder = winshell.startup()
+        return os.path.join(startup_folder, "BingWallpaper.lnk")
+
+    def toggle_autostart(self, icon, item):
+        """Erstellt oder löscht die Verknüpfung im Autostart-Ordner."""
+        shortcut_path = self._get_autostart_shortcut_path()
+        
+        if os.path.exists(shortcut_path):
+            # Verknüpfung löschen
+            os.remove(shortcut_path)
+            print("Autostart deaktiviert: Verknüpfung entfernt.")
+        else:
+            # Verknüpfung erstellen
+            # sys.executable ist der Pfad zur python.exe oder zur kompilierten .exe
+            target = sys.executable
+            winshell.CreateShortcut(Path=shortcut_path, Target=target, Arguments=f'"{os.path.abspath(__file__)}"')
+            print(f"Autostart aktiviert: Verknüpfung erstellt in {shortcut_path}")
 
     def start_auto_update_thread(self):
         if self.auto_update_thread is None or not self.auto_update_thread.is_alive():

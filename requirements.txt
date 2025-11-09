@@ -1,0 +1,6 @@
+requests
+Pillow
+pystray
+winshell
+pywin32
+pyinstaller
