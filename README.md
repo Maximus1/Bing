@@ -17,10 +17,11 @@ Keine aufdringliche Benutzeroberfläche: Läuft komplett im Hintergrund und wird
 ## 🚀 Installation und Ausführung
 
 1. Voraussetzungen
-Python 3.x
-Windows-Betriebssystem
+- Python 3.x
+- Windows-Betriebssystem
+
 2. Abhängigkeiten installieren
-Öffne eine Kommandozeile (CMD oder PowerShell) und installiere die benötigten Python-Pakete:
+- Öffne eine Kommandozeile (CMD oder PowerShell) und installiere die benötigten Python-Pakete:
 
 bash
 pip install requests Pillow pystray
