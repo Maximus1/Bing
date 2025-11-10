@@ -1,6 +1,8 @@
 # Bing Wallpaper für Windows
 
-![Bing Wallpaper Vorschau](./Screenshot 2025-11-10 011016.png)
+<p align="center">
+  <img src="./Screenshot 2025-11-10 011016.png" alt="SC" width="500">
+</p>
 
 Ein einfaches Python-Skript, das täglich das aktuelle Bing-Bild des Tages als Desktophintergrund für Windows festlegt. Die Anwendung läuft unauffällig im System-Tray (Infobereich der Taskleiste) und bietet einfache Steuerung über ein Kontextmenü.
 
