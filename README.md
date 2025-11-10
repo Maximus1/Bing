@@ -1,6 +1,8 @@
 # Bing Wallpaper für Windows
 
-Ein einfaches Python-Skript, das täglich das aktuelle Bing-Bild des Tages als Desktophintergrund für Windows festlegt. Die Anwendung läuft unauffällig im System-Tray (Infobereich der Taskleiste) und bietet grundlegende Steuerungsoptionen.
+![Bing Wallpaper Vorschau](./Screenshot 2025-11-10 011016.png)
+
+Ein einfaches Python-Skript, das täglich das aktuelle Bing-Bild des Tages als Desktophintergrund für Windows festlegt. Die Anwendung läuft unauffällig im System-Tray (Infobereich der Taskleiste) und bietet einfache Steuerung über ein Kontextmenü.
 
 ## ✨ Funktionen
 
@@ -16,14 +18,9 @@ Speichert die heruntergeladenen Bilder im Ordner C:\Benutzer\<DeinName>\Bilder\B
 #### System-Tray-Integration: 
 Bietet ein Menü für einfache Steuerung:
 
-#### Jetzt aktualisieren: 
-Startet sofort den Download und die Aktualisierung.
-
-#### Automatisch alle 24h: 
-Aktiviert oder deaktiviert die automatische Aktualisierung.
-
-#### Beenden: 
-Schließt die Anwendung.
+- Jetzt aktualisieren: Startet sofort den Download und die Aktualisierung.
+- Automatisch alle 24h: Aktiviert oder deaktiviert die automatische Aktualisierung.
+- Beenden: Schließt die Anwendung.
 
 #### Effizient: 
 Prüft, ob das Bild des Tages bereits heruntergeladen wurde, um unnötige Downloads zu vermeiden.
@@ -43,6 +40,7 @@ Läuft komplett im Hintergrund und wird nur über das Icon im Infobereich gesteu
 ````bash
 pip install requests Pillow pystray
 ````
+
 3. Skript ausführen
 Führe das Skript einfach über die Kommandozeile aus. Es erscheint ein Icon im System-Tray.
 
@@ -59,6 +57,7 @@ PyInstaller installieren:
 ````bash
 pip install pyinstaller
 ````
+
 #### Icon vorbereiten: 
 Stelle sicher, dass sich eine Icon-Datei namens app.ico im selben Verzeichnis wie das Skript befindet.
 
@@ -67,10 +66,10 @@ Führe den folgenden Befehl im Terminal aus. Er bündelt das Skript, das Icon un
 
 ````bash
 pyinstaller --onefile --noconsole --add-data "app.ico;." bing.py
---onefile: Erstellt eine einzelne ausführbare Datei.
---noconsole: Verhindert, dass beim Start ein Konsolenfenster geöffnet wird (wichtig für eine Hintergrundanwendung).
---add-data "app.ico;."
 ````
-Fügt die app.ico-Datei zum Paket hinzu.
+
+- --onefile: Erstellt eine einzelne ausführbare Datei.
+- --noconsole: Verhindert, dass beim Start ein Konsolenfenster geöffnet wird (wichtig für eine Hintergrundanwendung).
+- --add-data "app.ico;" fügt die app.ico-Datei zum Paket hinzu.
 
 Die fertige bing.exe kann nun direkt ausgeführt und zum Autostart-Ordner von Windows hinzugefügt werden, um sie bei jedem Systemstart automatisch zu laden.
