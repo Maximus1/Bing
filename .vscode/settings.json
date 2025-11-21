@@ -1,0 +1,30 @@
+{
+    "geminicodeassist.rules": "Antworte immer auf deutsch.\nErkläre mir was ich mit meinem Promt will, damit ich sehen kann das du mich verstanden hast.\nfüge erst etwas in den code ein, wenn ich dir zu verstehen geben das du mich richtig verstanden hast und den code generieren und einfügen sollst.\nHalte den Code immer Sauber, Übersichtlich und gut strukturiert.",
+    "ollama.models": [
+        "qwen2.5-coder:7b",
+        "starcoder2:7b",
+        "mistral:latest",
+        "deepseek-coder:latest",
+        "llama3.1:latest",
+        "codellama:latest",
+        "qwen3-vl:8b",
+        "gemma3:1b",
+        "deepseek-r1:8b",
+        "gemma3:4b"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "zencoder.mcpServers": {
+        "memory": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-memory"
+            ],
+            "env": {
+                "MEMORY_FILE_PATH": "/path/to/custom/memory_bing.json"
+            }
+        }
+    }
+    
+}

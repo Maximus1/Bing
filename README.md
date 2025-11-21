@@ -67,7 +67,7 @@ Stelle sicher, dass sich eine Icon-Datei namens app.ico im selben Verzeichnis wi
 Führe den folgenden Befehl im Terminal aus. Er bündelt das Skript, das Icon und alle Abhängigkeiten in einer einzigen .exe-Datei im dist-Ordner.
 
 ````bash
-pyinstaller --onefile --noconsole --add-data "app.ico;." bing.py
+& pyinstaller --onefile --noconsole --add-data "app.ico;." bing.py
 ````
 
 - --onefile: Erstellt eine einzelne ausführbare Datei.

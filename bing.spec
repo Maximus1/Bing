@@ -6,7 +6,7 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[('app.ico', '.')],
-    hiddenimports=[],
+    hiddenimports=['winshell', 'pywin32'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -35,6 +35,4 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    version='version_info.txt',
-    icon=['app.ico'],
 )
