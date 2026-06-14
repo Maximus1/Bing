@@ -14,17 +14,6 @@
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
-    "zencoder.mcpServers": {
-        "memory": {
-            "command": "npx",
-            "args": [
-                "-y",
-                "@modelcontextprotocol/server-memory"
-            ],
-            "env": {
-                "MEMORY_FILE_PATH": "/path/to/custom/memory_bing.json"
-            }
-        }
-    }
+    "zencoder.mcpServers": {}
     
 }
