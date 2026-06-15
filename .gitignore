@@ -3,3 +3,4 @@
 *.spec
 /.packrat/
 /.zencoder/
+__pycache__/bing.cpython-313.pyc
